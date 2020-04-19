@@ -1,6 +1,9 @@
-const vars = {
-	googleApiKey: 'AIzaSyBrRJZ9R8e_nmrIJEboq8AP-iC3sz1jHCI'
-}
+// const vars = {
+// 	googleApiKey: 'AIzaSyD-ZPcMh4YKvZJSo-H2C7ESf2PEDJWlcEc'
+// };
+
+// export default vars;
+
 
 const variables = {
 	development: {
