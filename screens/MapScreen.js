@@ -61,7 +61,11 @@ const MapScreen = props => {
 				{markerCoordinates && <Marker title="Picked Location" coordinate={markerCoordinates}></Marker>}
 			</MapView> */}
 
-			<MapView style={styles.mapStyle} onPress={selectLocationHandler} region={mapRegion}>
+			<MapView
+				style={styles.mapStyle}
+				onPress={selectLocationHandler}
+				region={mapRegion} provider="google"
+				zoomEnabled={true}>
 				{markerCoordinates && <Marker title="Picked Location" coordinate={markerCoordinates}></Marker>}
 			</MapView>
 		</View >
