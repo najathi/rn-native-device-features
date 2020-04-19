@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	View,
 	Text,
@@ -12,12 +12,19 @@ import * as Permissions from 'expo-permissions';
 
 import Colors from '../constants/Colors';
 import MapPreview from './MapPreview';
-import { round } from 'react-native-reanimated';
 
 const LocationPicker = props => {
 
 	const [isFetching, setIsFetching] = useState(false);
 	const [pickedLocation, setPickedLocation] = useState();
+
+	const mapPickedLocation = props.navigation.getParam('pickedLocation');
+
+	useEffect(() => {
+		if (mapPickedLocation) {
+			setPickedLocation(mapPickedLocation);
+		}
+	}, [mapPickedLocation]);
 
 	verifyPermissions = async () => {
 		const { status } = await Permissions.askAsync(Permissions.LOCATION);
