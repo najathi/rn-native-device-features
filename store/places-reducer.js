@@ -28,6 +28,7 @@ export default (state = initialState, action) => {
 				action.placeData.coords.lat,
 				action.placeData.coords.lng,
 			);
+			// console.log('newPlace', newPlace);
 			return {
 				places: state.places.concat(newPlace)
 			};
